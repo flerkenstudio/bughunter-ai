@@ -1,8 +1,10 @@
 # Publishing to GitHub
 
-The repository is prepared locally: initial commit on `main`, tag `v0.1.0`, issue templates, PR
-template, CI workflow, security policy and changelog. Once the remote URL is known, publish with the
-steps below.
+**This repository is published at <https://github.com/flerkenstudio/bughunter-ai>** with `main`,
+tag `v0.1.0`, 15 topics, project labels and a release. CI runs on every push.
+
+The steps below are the reproducible procedure (also useful for a fork or a fresh mirror). Replace
+`OWNER` with your account.
 
 ## 1. Create the repository
 

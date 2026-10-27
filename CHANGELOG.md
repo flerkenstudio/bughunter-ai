@@ -33,4 +33,4 @@ First hackathon release: a complete, repeatable failure-to-verification loop.
 - The generic probe is a smoke/quality pack, not a functional test suite for unknown sites.
 - Patch proposal and verification apply only to the bundled demo checkout.
 
-[0.1.0]: https://github.com/OWNER/bughunter-ai/releases/tag/v0.1.0
+[0.1.0]: https://github.com/flerkenstudio/bughunter-ai/releases/tag/v0.1.0
