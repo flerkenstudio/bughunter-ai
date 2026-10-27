@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sign in to the Nimbus Supply demo store with the seeded demo account." />
+  <title>Account — Nimbus Supply</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">Nimbus<span>Supply</span></div>
+    <nav>
+      <a href="index.html">Shop</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="login.html">Account</a>
+      <span class="cart-pill">Cart: <b data-testid="cart-count">0</b></span>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Sign in</h1>
+    <p class="lede">Demo account: <code>demo@nimbus.dev</code> / <code>demo1234</code></p>
+
+    <form class="forms card" data-testid="login-form" novalidate>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" data-testid="login-email" type="email" autocomplete="username" />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input id="password" data-testid="login-password" type="password" autocomplete="current-password" />
+      </div>
+      <button class="primary" type="submit" data-testid="login-submit">Sign in</button>
+      <div class="flash error" data-testid="login-error" hidden></div>
+    </form>
+
+    <section class="card" data-testid="login-success" hidden style="margin-top: 20px">
+      <span class="badge">Signed in</span>
+      <p class="muted">Welcome back, <b data-testid="account-email"></b>. Your orders and saved carts are available.</p>
+    </section>
+  </main>
+
+  <script src="store.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Nimbus Supply checkout: review your cart, apply a promo code and place an order." />
+  <title>Checkout — Nimbus Supply</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">Nimbus<span>Supply</span></div>
+    <nav>
+      <a href="index.html">Shop</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="login.html">Account</a>
+      <span class="cart-pill">Cart: <b data-testid="cart-count">0</b></span>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Checkout</h1>
+    <p class="lede">Review your order and apply a promo code.</p>
+
+    <div data-testid="checkout" class="checkout-layout" hidden>
+      <section class="card">
+        <h2 class="small muted">Your cart</h2>
+        <div data-testid="cart-lines"></div>
+
+        <div class="promo">
+          <input data-testid="promo-input" placeholder="Promo code" autocomplete="off" />
+          <button data-testid="apply-promo">Apply</button>
+          <p data-testid="promo-message"></p>
+        </div>
+        <p class="note">
+          SAVE10 takes 10% off the subtotal. Shipping is free over $75 after discount.
+          Tax is 8% of the discounted subtotal.
+        </p>
+      </section>
+
+      <aside class="card">
+        <h2 class="small muted">Order summary</h2>
+        <div class="summary-row"><span>Subtotal</span><span data-testid="subtotal">$0.00</span></div>
+        <div class="summary-row discount" data-testid="discount-row" hidden>
+          <span>Discount</span><span data-testid="discount">$0.00</span>
+        </div>
+        <div class="summary-row"><span>Shipping</span><span data-testid="shipping">$0.00</span></div>
+        <div class="summary-row"><span>Tax</span><span data-testid="tax">$0.00</span></div>
+        <div class="summary-row total"><span>Total</span><span data-testid="total">$0.00</span></div>
+        <div style="margin-top: 18px">
+          <button class="primary" data-testid="place-order">Place order</button>
+        </div>
+      </aside>
+    </div>
+
+    <div data-testid="empty-cart" class="empty" hidden>
+      <p class="muted">Your cart is empty. <a href="index.html">Back to the shop</a>.</p>
+    </div>
+  </main>
+
+  <script src="store.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

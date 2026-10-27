@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# runtime state: SQLite db, artifacts, logs, worktrees
+data/
+
+node_modules/
+frontend/dist/
+dist/
+
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db

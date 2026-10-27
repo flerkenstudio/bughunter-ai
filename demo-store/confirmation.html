@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Nimbus Supply order confirmation with the charged total and reference." />
+  <title>Order confirmed — Nimbus Supply</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">Nimbus<span>Supply</span></div>
+    <nav>
+      <a href="index.html">Shop</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="login.html">Account</a>
+      <span class="cart-pill">Cart: <b data-testid="cart-count">0</b></span>
+    </nav>
+  </header>
+
+  <main>
+    <div class="order-hero">
+      <span class="badge">Payment captured</span>
+      <h1>Thanks for your order</h1>
+      <p class="muted">
+        Reference <b data-testid="order-reference"></b>. A receipt was sent to your inbox.
+      </p>
+      <div class="summary-row total">
+        <span>Charged today</span>
+        <span data-testid="order-total">$0.00</span>
+      </div>
+      <div data-testid="order-lines" class="stack small muted"></div>
+      <p class="note">This storefront is a demo target for BugHunter AI. No payment is processed.</p>
+    </div>
+  </main>
+
+  <script src="store.js"></script>
+  <script>
+    (function renderOrder() {
+      const raw = localStorage.getItem("nimbus.lastOrder");
+      const total = document.querySelector("[data-testid='order-total']");
+      if (!raw || !total) return;
+      const order = JSON.parse(raw);
+      total.textContent = formatMoney(order.totals.total);
+      document.querySelector("[data-testid='order-reference']").textContent = order.reference;
+      document.querySelector("[data-testid='order-lines']").innerHTML = order.lines
+        .map((line) => `${line.name} x${line.qty} — ${formatMoney(line.lineTotal)}`)
+        .join("<br />");
+    })();
+  </script>
+</body>
+</html>

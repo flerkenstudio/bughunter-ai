@@ -1,0 +1,65 @@
+name: Bug report
+description: Something in BugHunter AI is broken or reports the wrong result
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please include the run ID when the bug came from an investigation:
+        it lets us replay the exact evidence.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Include the run ID, the status shown, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Start the API
+        2. Register https://example.com
+        3. Run scope probe
+        4. See status …
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Target policy / security
+        - Browser runner / evidence
+        - Reproduction or bug classification
+        - Patch proposal or verification
+        - Dashboard
+        - API contracts
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Artifact paths, `data/artifacts/<run-id>/` contents, or screenshots.
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: v0.1.0 / commit hash
+    validations:
+      required: false
+  - type: checkboxes
+    id: invariants
+    attributes:
+      label: Please confirm
+      options:
+        - label: I did not mark anything verified that did not pass tests
+          required: true
+        - label: This report does not contain secrets, cookies or API keys
+          required: true

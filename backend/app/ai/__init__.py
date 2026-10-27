@@ -1,0 +1,1 @@
+"""Model adapters. The deterministic provider keeps the demo usable offline."""

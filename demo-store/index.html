@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Nimbus Supply demo storefront: field-tested essentials with deterministic pricing." />
+  <title>Nimbus Supply — Demo Store</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">Nimbus<span>Supply</span></div>
+    <nav>
+      <a href="index.html">Shop</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="login.html">Account</a>
+      <span class="cart-pill">Cart: <b data-testid="cart-count">0</b></span>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Field-tested essentials</h1>
+    <p class="lede">
+      The controlled demo target for BugHunter AI. Prices, promo rules and tax are
+      deterministic so every investigation can be reproduced.
+    </p>
+
+    <div class="grid">
+      <article class="card product" data-testid="product-pulse-headphones">
+        <h3>Pulse Headphones</h3>
+        <p>Closed-back wireless, 40h battery.</p>
+        <div class="price">$89.00</div>
+        <button data-add-to-cart="pulse-headphones" data-testid="add-pulse-headphones">Add to cart</button>
+      </article>
+
+      <article class="card product" data-testid="product-nimbus-bottle">
+        <h3>Nimbus Bottle</h3>
+        <p>Insulated steel, 750ml.</p>
+        <div class="price">$18.50</div>
+        <button data-add-to-cart="nimbus-bottle" data-testid="add-nimbus-bottle">Add to cart</button>
+      </article>
+
+      <article class="card product" data-testid="product-trail-pack">
+        <h3>Trail Pack</h3>
+        <p>22L daypack with laptop sleeve.</p>
+        <div class="price">$64.00</div>
+        <button data-add-to-cart="trail-pack" data-testid="add-trail-pack">Add to cart</button>
+      </article>
+
+      <article class="card product" data-testid="product-aurora-mug">
+        <h3>Aurora Mug</h3>
+        <p>Double-walled ceramic.</p>
+        <div class="price">$14.25</div>
+        <button data-add-to-cart="aurora-mug" data-testid="add-aurora-mug">Add to cart</button>
+      </article>
+    </div>
+  </main>
+
+  <script src="store.js"></script>
+</body>
+</html>
