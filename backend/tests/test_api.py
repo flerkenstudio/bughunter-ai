@@ -239,4 +239,6 @@ def test_probe_pack_passes_on_demo_store(client):
     assert live["run"]["summary"]["passed"] == 8
     assert live["run"]["summary"]["failed"] == 0
     assert live["bugs"] == []
-    assert live["run"]["target_revision"].startswith("fingerprint:")
+    revision = live["run"]["target_revision"]
+    # A git commit when the repository is committed, a content fingerprint otherwise.
+    assert revision and (revision.startswith("fingerprint:") or len(revision) == 40)
